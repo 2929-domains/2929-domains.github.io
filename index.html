@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Under Construction</title>
+  <style>
+    /* Google Font */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    /* Reset & body styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      overflow: hidden;
+    }
+
+    /* Glassmorphic container */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 50px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    p {
+      color: #f0f0f0;
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    /* Animated construction icon */
+    .construction-icon {
+      font-size: 60px;
+      color: #fff;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
+    }
+
+    /* Button */
+    .notify-btn {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 50px;
+      background: rgba(255,255,255,0.25);
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      backdrop-filter: blur(10px);
+    }
+
+    .notify-btn:hover {
+      background: rgba(255,255,255,0.4);
+      transform: scale(1.05);
+    }
+
+    /* Animations */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+
+    /* Responsive text */
+    @media(max-width: 500px){
+      h1 { font-size: 2rem; }
+      p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glass-card">
+    <div class="construction-icon">🚧</div>
+    <h1>We're Under Construction</h1>
+    <p>Our website is getting a new look. Stay tuned!</p>
+    <button class="notify-btn">Notify Me</button>
+  </div>
+</body>
+  </html>
