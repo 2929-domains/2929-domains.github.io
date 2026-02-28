@@ -3,189 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Construction</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <title>Under Construction | Catppuccin Mocha</title>
     <style>
+        /* Catppuccin Mocha Palette */
         :root {
-            --bg-dark: #6c7086;
-            --accent-pink: #f38ba8;
-            --accent-purple: #cba6f7;
-            --white: #ffffff;
+            --rosewater: #f5e0dc;
+            --flamingo: #f2cdcd;
+            --pink: #f5c2e7;
+            --mauve: #cba6f7;
+            --red: #f38ba8;
+            --maroon: #eba0ac;
+            --peach: #fab387;
+            --yellow: #f9e2af;
+            --green: #a6e3a1;
+            --teal: #94e2d5;
+            --sky: #89dceb;
+            --sapphire: #74c7ec;
+            --blue: #89b4fa;
+            --lavender: #b4befe;
+            --text: #cdd6f4;
+            --subtext1: #bac2de;
+            --subtext0: #a6adc8;
+            --overlay2: #9399b2;
+            --surface2: #585b70;
+            --surface0: #313244;
+            --base: #1e1e2e;
+            --mantle: #181825;
+            --crust: #11111b;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
         }
 
         body {
-            height: 100vh;
+            background-color: var(--base);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            /* Using your colors for a smooth mesh gradient */
-            background-color: var(--bg-dark);
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(243, 139, 168, 0.3) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(203, 166, 247, 0.3) 0px, transparent 50%);
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Decorative Animated Elements */
-        .shape {
-            position: absolute;
-            filter: blur(60px);
-            z-index: 0;
-            border-radius: 50%;
-            animation: move 20s infinite alternate;
-        }
-        .shape-1 { 
-            width: 400px; height: 400px; 
-            background: var(--accent-pink); 
-            top: -10%; left: -10%; 
-            opacity: 0.4;
-        }
-        .shape-2 { 
-            width: 350px; height: 350px; 
-            background: var(--accent-purple); 
-            bottom: -5%; right: -5%; 
-            opacity: 0.4;
-            animation-delay: -5s;
-        }
-
-        @keyframes move {
-            from { transform: translate(0, 0); }
-            to { transform: translate(100px, 50px); }
-        }
-
-        /* Glass Card */
-        .glass-container {
-            width: 90%;
-            max-width: 480px;
-            padding: 3rem;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            min-height: 100vh;
             text-align: center;
-            z-index: 1;
-            color: var(--white);
+        }
+
+        .card {
+            background-color: var(--mantle);
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            max-width: 500px;
+            width: 90%;
+            border: 1px solid var(--surface0);
+            animation: slideUp 0.8s ease-out;
         }
 
         .status-badge {
             display: inline-block;
+            background-color: var(--surface0);
+            color: var(--mauve);
             padding: 6px 16px;
-            background: rgba(243, 139, 168, 0.15);
-            border: 1px solid var(--accent-pink);
-            color: var(--accent-pink);
             border-radius: 100px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             margin-bottom: 1.5rem;
+            border: 1px solid var(--mauve);
         }
 
         h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
+            color: var(--lavender);
+            font-size: 2.2rem;
             margin-bottom: 1rem;
-            background: linear-gradient(to right, #ffffff, var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
         }
 
         p {
-            font-size: 1.1rem;
-            font-weight: 300;
+            color: var(--subtext0);
             line-height: 1.6;
-            margin-bottom: 2.5rem;
-            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
         }
 
+        /* Input Group */
         .input-group {
-            position: relative;
             display: flex;
-            flex-direction: column;
-            gap: 12px;
+            background: var(--crust);
+            padding: 6px;
+            border-radius: 12px;
+            border: 1px solid var(--surface0);
+            transition: border-color 0.3s;
+        }
+
+        .input-group:focus-within {
+            border-color: var(--blue);
         }
 
         input {
-            background: rgba(255, 255, 255, 0.07);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 16px 20px;
-            border-radius: 15px;
-            color: white;
-            font-size: 1rem;
+            background: transparent;
+            border: none;
+            padding: 12px 15px;
+            color: var(--text);
+            flex: 1;
             outline: none;
-            transition: 0.3s;
-        }
-
-        input:focus {
-            border-color: var(--accent-purple);
-            background: rgba(255, 255, 255, 0.12);
+            font-size: 1rem;
         }
 
         button {
-            background: var(--accent-purple);
-            color: #313244; /* Darker text for contrast */
+            background-color: var(--blue);
+            color: var(--crust);
             border: none;
-            padding: 16px;
-            border-radius: 15px;
-            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 8px;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: opacity 0.2s;
         }
 
         button:hover {
-            background: var(--accent-pink);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(243, 139, 168, 0.3);
+            opacity: 0.9;
         }
 
-        /* Footer links */
-        .socials {
+        /* Small link footer */
+        .links {
             margin-top: 2rem;
             display: flex;
             justify-content: center;
-            gap: 20px;
-            font-size: 0.9rem;
-            opacity: 0.6;
+            gap: 15px;
         }
 
-        .socials span:hover {
-            color: var(--accent-purple);
-            cursor: pointer;
-            opacity: 1;
+        .links a {
+            color: var(--overlay2);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
         }
 
+        .links a:hover {
+            color: var(--peach);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 480px) {
+            .input-group { flex-direction: column; background: transparent; border: none; padding: 0; }
+            input { background: var(--crust); border-radius: 12px; margin-bottom: 10px; border: 1px solid var(--surface0); }
+            button { width: 100%; padding: 15px; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
+    <div class="card">
+        <span class="status-badge">Under Construction</span>
+        <h1>Brewing Something New</h1>
+        <p>Our digital workspace is currently under maintenance. We're adding some fresh flavor to the experience.</p>
+        
 
-    <main class="glass-container">
-        <span class="status-badge">In Development</span>
-        <h1>Coming Soon</h1>
-        <p>We're building something special with a focus on design and simplicity. Stay tuned!</p>    
-
-        <div class="socials">
-            
-
-            <a href="https://github.com/2929-domains"><span>Github</span></a>
+        <div class="links">
+            <a href="https://github.com/2929-domains">Github</a>
+        
+        
         </div>
-    </main>
+    </div>
 
 </body>
 </html>
